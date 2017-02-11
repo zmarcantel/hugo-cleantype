@@ -1,0 +1,15 @@
+sudo: false
+
+# convenience since the builders are node-based
+language: node_js
+node_js: node
+
+before_script:
+  - npm install -g less clean-css-cli
+
+script:
+    - if [ "$TRAVIS_BRANCH" != "master" ]; then make; fi
+
+after_success:
+    - if [ "$TRAVIS_BRANCH" != "master" ]; then ./travis_upload.sh; fi
+

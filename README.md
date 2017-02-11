@@ -49,8 +49,6 @@ In addition to posts having a `description` string, the site can now have its ow
 This is used in the site heading and the `meta` html tag for spiders/robots.
 
 ```toml
-// config.toml
-
 description = "Description of your site"
 
 ```
@@ -68,8 +66,6 @@ Local JS/CSS will be served from the `example.com/{css,js}` path as necessary.
 This will include this JS and/or CSS file on every page of the site:
 
 ```toml
-// config.toml
-
 [params]
     local_css = ["my.css"]
     external_css = ["http://some.external.com/public/my.css"]
@@ -106,8 +102,6 @@ In the site's configuration, if the `post_footer_tags` is set to `true`, all tag
 with the post (if any) are displayed at the end of the post before the copyright footer.
 
 ```toml
-// config.toml
-
 [params]
     post_footer_tags = true
 ```
@@ -125,3 +119,13 @@ To do this, add the following to the site config:
 pygmentsuseclasses = true
 PygmentsCodeFences = true
 ```
+
+
+
+Contributing
+============
+
+All contributions should be done through pull requests.
+
+Nothing should be committed directly to `master`. Instead, all source (and only source) files should be committed to
+the `devel` branch, which `travis` will build and deploy to master so users can rely on only the pre-built files.
