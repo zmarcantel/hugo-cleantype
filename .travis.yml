@@ -1,0 +1,15 @@
+sudo: false
+
+# convenience since the builders are node-based
+language: node_js
+node_js: node
+
+before_script:
+  - npm install -g less clean-css-cli
+
+script:
+    - make
+
+after_success:
+    - ./travis_upload.sh
+

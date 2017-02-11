@@ -125,3 +125,13 @@ To do this, add the following to the site config:
 pygmentsuseclasses = true
 PygmentsCodeFences = true
 ```
+
+
+
+Contributing
+============
+
+All contributions should be done through pull requests.
+
+Nothing should be committed directly to `master`. Instead, all source (and only source) files should be committed to
+the `devel` branch, which `travis` will build and deploy to master so users can rely on only the pre-built files.
