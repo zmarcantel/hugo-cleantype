@@ -1,0 +1,15 @@
+<li class="post-list-entry"><a class="entry-link" href='{{ .Permalink }}'>
+    <h1>{{ .Title }}<aside>{{ .Date.Format "Jan 2, 2006" }}</aside></h1>
+    <h2>{{ .Description | markdownify }}</h2>
+
+    {{ $baseurl := .Site.BaseURL }}
+    <div class="post-list-tag-entry-list">
+        {{ if gt (len .Params.tags) 0 }}
+            {{ range .Params.tags }}
+                <a class="post-tag" href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        {{ else }}
+            <span class="post-tag">&nbsp;</span>
+        {{ end }}
+    </div>
+</a></li>

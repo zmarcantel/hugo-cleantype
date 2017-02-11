@@ -1,0 +1,12 @@
+{{ range .Site.Params.local_js }}
+    <script type="text/javascript" src="{{ $.Site.BaseURL }}js/{{ . }}"></script>
+{{ end }}
+{{ range .Params.local_js }}
+    <script type="text/javascript" src="{{ $.Site.BaseURL }}js/{{ . }}"></script>
+{{ end }}
+{{ range .Site.Params.external_js }}
+    <script type="text/javascript" src="{{ . }}"></script>
+{{ end }}
+{{ range .Params.external_js }}
+    <script type="text/javascript" src="{{ . }}"></script>
+{{ end }}

@@ -1,0 +1,15 @@
+<div class="pagination">
+    <a
+        class="older {{ if not .HasNext }}disabled{{ end }}"
+        href="{{ if .HasNext }}{{ .Next.URL }}{{ else }}#{{ end }}"
+    >&lt;&lt; Older</a>
+
+    <div class="page-indicator">
+        <span class="current-page">{{ .PageNumber }}</span>/<span class="page-count">{{ .TotalPages }}</span>
+    </div>
+
+    <a
+        class="newer {{ if not .HasPrev }}disabled{{ end }}"
+        href="{{ if .HasPrev }}{{ .Prev.URL }}{{ else }}#{{ end }}"
+    >&gt;&gt; Newer</a>
+</div>
