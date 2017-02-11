@@ -1,0 +1,10 @@
+<div class="post-heading">
+    <center>
+        <h1>{{ .Site.Title }}</h1>
+        {{ if isset .Site.Params "description" }}
+            <h2>{{ .Site.Params.Description }}</h2>
+        {{ end }}
+    </center>
+
+    {{ partial "nav.html" . }}
+</div>

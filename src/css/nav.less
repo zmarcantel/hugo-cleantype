@@ -1,0 +1,23 @@
+.nav {
+    width: @content-width;
+    margin-left: @content-push-margin;
+
+    margin-top: 2em;
+    text-align: center;
+
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-top: 1px solid fade(@gray-dark, 10%);
+    border-bottom: 1px solid fade(@gray-dark, 10%);
+
+    a {
+        text-decoration: none;
+        .headerfont_bold(@font-body-size; @blue-pale);
+
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    a:active { color: @red; }
+    a:hover { color: @blue-dark; }
+}

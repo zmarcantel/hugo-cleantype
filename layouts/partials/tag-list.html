@@ -1,0 +1,16 @@
+{{ $baseurl := .Site.BaseURL }}
+
+
+<div class="tag-list-wrapper">
+    <h1>Tags Used On This Site:</h1>
+    
+    <ul class="tag-list">
+        {{ range $name, $pages := .Data.Terms }}
+            <li class="tag-list-entry">
+                <h1><a class="entry-link" href='{{ $baseurl }}tags/{{ $name }}'>
+                    {{ $name }}<aside>({{ len $pages }})</aside>
+                </a></h1>
+            </li>
+        {{ end }}
+    </ul>
+</div>

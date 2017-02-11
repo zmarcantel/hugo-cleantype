@@ -1,0 +1,147 @@
+@headercolor: #000000;
+@font-header: "Playfair Display";
+@font-header-size: 1.75em;
+@font-header-size-small: 1.25em;
+@font-header-bold-weight: 700;
+@font-header-normal-weight: 400;
+
+
+.headerfont(@size; @weight; @color) {
+    color: @color;
+    font-size: @size;
+    font-weight: @weight;
+    font-family: @font-header, serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        font-size: @font-header-size-small;
+    }
+}
+
+
+//
+// bold header font
+//
+
+.headerfont_bold {
+    .headerfont(@font-header-size; @font-header-bold-weight; @headercolor);
+}
+
+.headerfont_bold(@size) {
+    .headerfont(@size; @font-header-bold-weight; @headercolor);
+}
+
+.headerfont_bold(@size; @color) {
+    .headerfont(@size; @font-header-bold-weight; @color);
+}
+
+
+//
+// regular header font
+//
+
+.headerfont {
+    .headerfont(@font-header-size; @font-header-normal-weight; @headercolor);
+}
+
+.headerfont(@size) {
+    .headerfont(@size; @font-header-normal-weight; @headercolor);
+}
+
+.headerfont(@size; @color) {
+    .headerfont(@size; @font-header-normal-weight; @color);
+}
+
+
+
+
+@bodycolor: @gray-dark;
+@font-body: "Raleway";
+@font-body-size: 1.125em;
+@font-body-size-small: 0.75em;
+@font-body-light-weight: 300;
+@font-body-normal-weight: 400;
+@font-body-italic-weight: 400;
+
+
+.bodyfont(@size; @style; @weight; @color) {
+    font-family: @font-body, sans-serif;
+    font-size: @size;
+    font-style: @style;
+    font-weight: @weight;
+    color: @color;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        font-size: @font-body-size-small;
+    }
+}
+
+
+//
+// light body font
+//
+
+.bodyfont_light {
+    .bodyfont(@font-body-size; normal; @font-body-light-weight; @bodycolor);
+}
+
+.bodyfont_light(@size) {
+    .bodyfont(@size; normal; @font-body-light-weight; @bodycolor);
+}
+
+.bodyfont_light(@size; @color) {
+    .bodyfont(@size; normal; @font-body-light-weight; @color);
+}
+
+
+//
+// italic body font
+//
+
+.bodyfont_italic {
+    .bodyfont(@font-body-size; italic; @font-body-italic-weight; @bodycolor);
+}
+
+.bodyfont_italic(@size) {
+    .bodyfont(@size; italic; @font-body-italic-weight; @bodycolor);
+}
+
+.bodyfont_italic(@size; @color) {
+    .bodyfont(@size; italic; @font-body-italic-weight; @color);
+}
+
+
+//
+// regular body font
+//
+
+.bodyfont {
+    .bodyfont(@font-body-size; normal; @font-body-normal-weight; @bodycolor);
+}
+
+.bodyfont(@size) {
+    .bodyfont(@size; normal; @font-body-normal-weight; @bodycolor);
+}
+
+.bodyfont(@size; @color) {
+    .bodyfont(@size; normal; @font-body-normal-weight; @color);
+}
+
+
+
+
+
+//
+// links
+//
+
+.linkstyle {
+    a {
+        color: @blue-pale;
+        text-decoration: none;
+    }
+    a:hover { color: @blue-dark; }
+}

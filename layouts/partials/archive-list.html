@@ -1,0 +1,11 @@
+<ul class="post-list">
+    {{ range $index, $value := (where .Site.Pages "Type" "post").GroupByDate "January 2006" }}
+        <div class="archive-group">
+            <h1 class="archive-date">{{ .Key }}</h1>
+            {{ range .Pages }}
+                {{ partial "post-list-entry.html" . }}
+            {{ end }}
+        </div>
+    {{ end }}
+</ul>
+

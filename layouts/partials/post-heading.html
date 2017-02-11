@@ -1,0 +1,28 @@
+{{ $url := replace .Permalink .Site.BaseURL "" }}
+
+<div class="post-heading">
+    <center>
+        <h1>{{ .Title }}</h1>
+        {{ if isset .Params "description" }}
+            <h2>{{ .Params.Description }}</h2>
+        {{ end }}
+
+
+        <div class="post-details">
+            {{ if eq .Type "post" }}
+                {{ $site_author := index .Site.Author "name" }}
+
+                {{ if and (isset .Params "author") (.Params.Author) }}
+                    <h2>{{ .Params.Author }}</h2>
+                {{ else if $site_author }}
+                    <h2>{{ $site_author }}</h2>
+                {{ end }}
+
+                <h2>{{ .WordCount }} words</h2>
+                <h2>{{ .ReadingTime }} minutes</h2>
+            {{ end }}
+        </div>
+    </center>
+
+    {{ partial "nav.html" . }}
+</div>

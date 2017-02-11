@@ -1,0 +1,198 @@
+@offwhite: #FEFEFE;
+@blue-pale: #90AFC5;
+@blue-dark: #336B87;
+@gray-dark: #2A3132;
+@red: #763626;
+
+@bgcolor: @offwhite;
+
+@content-width-percent: 63%;
+@content-push-percent: ((100% - @content-width-percent) / 2);
+
+@content-width: @content-width-percent;
+@content-push-margin: @content-push-percent;
+
+
+@import "reset.less";
+@import "typography.less";
+
+
+html, body {
+    height: 100%;
+    background: @bgcolor;
+}
+
+body {
+    .bodyfont;
+}
+
+h1 {
+    .headerfont_bold;
+
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+h2 {
+    .headerfont(@font-header-size * 0.9);
+
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+i {
+    .bodyfont_italic;
+}
+
+a {
+    color: @blue-pale;
+}
+a:hover {
+    color: @blue-dark;
+}
+
+
+.content-container {
+    width: @content-width;
+    margin-left: @content-push-margin;
+
+    .pagination {
+        width: 100%;
+        text-align: center;
+
+        padding-top: 3em;
+
+        .page-indicator {
+            display: inline;
+
+            .current-page {
+                display: inline;
+                padding-right: 0.5em;
+            }
+            .page-count {
+                display: inline;
+                padding-left: 0.5em;
+            }
+        }
+
+        .disabled {
+            visibility: hidden;
+        }
+        .older {
+            float: left;
+        }
+        .newer {
+            float: right;
+        }
+    }
+}
+
+.content-wrapper > :first-child { // eliminate first header's padding
+    padding-top: 0;
+    margin-top: 0;
+}
+.content-wrapper {
+    .bodyfont;
+    .linkstyle;
+
+    a:visited { color: @red; }
+
+    h1 {
+        padding-top: 3em;
+        .headerfont_bold;
+    }
+    h2 {
+        padding-top: 1.5em;
+        .headerfont_bold(@font-header-size * 0.9);
+    }
+    h3, {
+        padding-top: 1em;
+        .headerfont_bold(@font-header-size * 0.8);
+    }
+    h4, h5, h6, {
+        padding-top: 0.75em;
+        .headerfont_bold(@font-body-size; fade(@headercolor, 60%));
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        code { // allow `markdown` code blocks in headers
+            display: inline !important;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: @font-header-normal-weight;
+        }
+    }
+
+    p {
+        line-height: 125%;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+    }
+
+    strong {
+        .headerfont(@font-body-size * 0.75); // have to adjust size to new font
+    }
+
+    pre, code { // shared style for pre/code so that pre, code, and pre>code all share these traits
+        font-family: Monaco, Consolas, monospace;
+        font-size: @font-body-size * 0.75;
+        line-height: 140%;
+        white-space: pre;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -o-pre-wrap;
+
+    }
+
+    pre {
+        code {
+            display: block;
+            margin-top: 2em;
+            margin-bottom: 2em;
+
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+    }
+
+    code {
+        border: 1px solid darken(@bgcolor, 7.5%);
+        background: darken(@bgcolor, 2.5%);
+
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+    }
+}
+
+.site-heading {
+    padding-top: 5em;
+}
+
+.footer {
+    text-align: center;
+    margin-top: calc(8vh);
+    margin-bottom: calc(4vh);
+
+    .headerfont_bold(@font-body-size * (2/3); fade(@headercolor, 30%));
+
+    .copyright {
+        display: inline;
+        padding-right: calc(0.75vw);
+        border-right: 1px solid fade(@headercolor, 10%);
+    }
+
+    .copyright-holder {
+        display: inline;
+        padding-left: calc(0.75vw);
+    }
+}
+
+@import "nav.less";
+@import "tags.less";
+@import "post.less";
+@import "post_list.less";
+@import "archive.less";
+@import "media_query.less";
+@import "code.less";

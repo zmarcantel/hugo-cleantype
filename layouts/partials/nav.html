@@ -1,0 +1,22 @@
+<div class="nav">
+    {{ $url := replace .Permalink .Site.BaseURL "" }}
+    {{ if not .IsHome }}
+        <a href='{{ .Site.BaseURL }}'><span class="arrow">
+            </span>{{ with .Site.Params.home }}{{ . }}{{ else }}home{{ end }}
+        </a>
+    {{ end }}
+
+    {{ if ne $url "post/" }}
+        <a href='{{ .Site.BaseURL }}post'>
+            {{ with .Site.Params.archive }}{{ . }}{{ else }}archive{{ end }}
+        </a>
+    {{ end }}
+
+    {{ if ne $url "tags/" }}
+        <a href='{{ .Site.BaseURL }}tags'>{{ with .Site.Params.tags }}{{ . }}{{ else }}tags{{ end }}</a>
+    {{ end }}
+
+    {{ if ne $url "about/" }}
+        <a href='{{ .Site.BaseURL }}about'>{{ with .Site.Params.about }}{{ . }}{{ else }}about{{ end }}</a>
+    {{ end }}
+</div>

@@ -1,0 +1,12 @@
+<div class="tag-post-list-wrapper">
+    <h1 class="tag-post-list-header">
+        Posts Tagged: <span class="tag-name">{{ .Title }}</span>
+    </h1>
+
+
+    <ul class="tag-post-list">
+        {{ range .Data.Pages }}
+            {{ partial "post-list-entry.html" . }}
+        {{ end }}
+    </ul>
+</div>

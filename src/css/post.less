@@ -1,0 +1,41 @@
+@details-color: fade(@gray-dark, 50%);
+
+
+.post-content {
+    margin-top: 3em;
+    padding-bottom: 5em;
+}
+
+.post-heading {
+    margin-top: 3em;
+
+    .post-details {
+        margin-top: 1.5em;
+
+        h2 {
+            display: inline;
+
+            padding-left: 1em;
+            padding-right: 1em;
+
+            .bodyfont_light(calc(1.5vw); @details-color);
+        }
+
+        h2 + h2 {
+            border-left: 1px solid @details-color;
+        }
+    }
+}
+
+.post-content-tag-list {
+    width: 100%;
+    text-align: center;
+
+    padding-top: 2em;
+
+    .post-tag {
+        font-size: 1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+}
